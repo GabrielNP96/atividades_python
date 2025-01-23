@@ -15,9 +15,20 @@ def get_user_data() -> list:
                 numbers_list.append(number)
             out = input('Deseja adcionar mais numeros? S para sim e N para não: ').upper()
             if out == "N":
-                print(numbers_list)
-                break
+                return numbers_list
         except:
             print('Digite apenas números')
 
-get_user_data()
+def only_even_numbers(list) -> list:
+    even_list = []
+    for number in list:
+        if number % 2 == 0:
+            even_list.append((number))
+
+    print(even_list)
+    return even_list
+
+def sum_list(list) -> str:
+    return f'A soma dos números pares é = {sum(list)}'
+
+print(sum_list(only_even_numbers(get_user_data())))
